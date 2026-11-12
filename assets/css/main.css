@@ -1,0 +1,468 @@
+/**
+* Full-Page Space Background & Modern Styling — Portfolio Boulier Antoine
+*/
+
+@charset "UTF-8";
+
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, sans-serif;
+  --heading-font: "Mulish", sans-serif;
+  --nav-font: "Raleway", sans-serif;
+
+  --background-color: #030508;
+  --default-color: #cbd5e1;
+  --heading-color: #ffffff;
+  --accent-color: #38bdf8;
+  --surface-color: rgba(15, 23, 42, 0.65);
+  --surface-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--default-color);
+  font-family: var(--default-font);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* 1. FOND SPATIAL DYNAMIQUE SUR TOUT LE SITE (FIXED) */
+.stars-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 20%, #0f172a 0%, #030508 80%);
+}
+
+.stars, .stars2, .stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: radial-gradient(1px 1px at 10px 20px, #fff, rgba(0,0,0,0)),
+              radial-gradient(1px 1px at 50px 160px, #38bdf8, rgba(0,0,0,0)),
+              radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+              radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+              radial-gradient(1.5px 1.5px at 160px 120px, #818cf8, rgba(0,0,0,0));
+  background-size: 250px 250px;
+  animation: moveStars 60s linear infinite;
+  opacity: 0.7;
+}
+
+.stars2 {
+  background: radial-gradient(1.5px 1.5px at 20px 40px, #fff, rgba(0,0,0,0)),
+              radial-gradient(2px 2px at 70px 90px, #38bdf8, rgba(0,0,0,0)),
+              radial-gradient(1px 1px at 110px 150px, #fff, rgba(0,0,0,0)),
+              radial-gradient(1.5px 1.5px at 180px 30px, #c084fc, rgba(0,0,0,0));
+  background-size: 350px 350px;
+  animation: moveStars 120s linear infinite;
+  opacity: 0.5;
+}
+
+.stars3 {
+  background: radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+              radial-gradient(2.5px 2.5px at 120px 30px, #38bdf8, rgba(0,0,0,0)),
+              radial-gradient(1.5px 1.5px at 220px 180px, #fff, rgba(0,0,0,0));
+  background-size: 450px 450px;
+  animation: moveStars 180s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-500px); }
+}
+
+/* 2. EN-TÊTE / NAVIGATION */
+.header {
+  background: rgba(3, 5, 8, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 0 !important;
+  z-index: 1000;
+}
+
+.header .sitename {
+  font-size: 20px !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff !important;
+  margin: 0;
+}
+
+.navmenu ul {
+  display: flex !important;
+  flex-direction: row !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 12px !important;
+  align-items: center;
+}
+
+.navmenu li {
+  list-style: none !important;
+}
+
+.navmenu a {
+  color: #94a3b8 !important;
+  font-family: var(--nav-font);
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 8px 16px !important;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.navmenu a:hover,
+.navmenu .active {
+  color: #ffffff !important;
+  background: rgba(56, 189, 248, 0.15) !important;
+}
+
+/* 3. SECTIONS TRANSPARENTES SUR LE FOND SPATIAL */
+section, .section {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+  padding: 100px 0;
+}
+
+.hero {
+  min-height: 85vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 60px !important;
+}
+
+.hero h2 {
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+}
+
+.hero p {
+  font-size: 1.3rem !important;
+  color: #e2e8f0 !important;
+}
+
+.hero .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--surface-border);
+  color: var(--accent-color);
+  font-size: 18px;
+  margin: 0 6px;
+  transition: 0.3s;
+}
+
+.hero .social-links a:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.section-title {
+  text-align: center !important;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.section-title .subtitle {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.section-title p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center !important;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* 4. CARTES ET COMPOSANTS (GLASSMORPHISM RENFORCÉ) */
+.profile-card, 
+.detail-item, 
+.exp-card, 
+.comp-box {
+  background: var(--surface-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 24px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.profile-card:hover, 
+.detail-item:hover, 
+.exp-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+}
+
+.comp-box {
+  padding: 32px;
+  margin-bottom: 36px;
+}
+
+.border-admin { border-left: 4px solid #ef4444 !important; }
+.border-connect { border-left: 4px solid #f97316 !important; }
+.border-program { border-left: 4px solid #eab308 !important; }
+.border-securiser { border-left: 4px solid #22c55e !important; }
+.border-surveiller { border-left: 4px solid #3b82f6 !important; }
+
+.ac-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.ac-link {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #cbd5e1;
+  padding: 14px 20px;
+  border-radius: 10px;
+  text-align: left;
+  transition: all 0.25s ease;
+  width: 100%;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ac-link:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-color);
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+.modal-content {
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  color: #e2e8f0;
+}
+
+.modal-body img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(3, 5, 8, 0.9) !important;
+  padding: 50px 0;
+  border-top: 1px solid var(--surface-border);
+}
+
+/*--------------------------------------------------------------
+# Adaptations Responsive (Mobiles et Tablettes)
+--------------------------------------------------------------*/
+
+/* Écrans <= 991px (Tablettes et Mobiles) */
+@media (max-width: 991px) {
+  .hero h2 {
+    font-size: 2.2rem !important;
+  }
+
+  .hero p {
+    font-size: 1.1rem !important;
+  }
+
+  .navmenu ul {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+
+  .navmenu a {
+    font-size: 13px !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* Écrans <= 576px (Mobiles) */
+@media (max-width: 576px) {
+  .hero h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .profile-card, 
+  .detail-item, 
+  .exp-card, 
+  .comp-box {
+    padding: 20px !important;
+  }
+
+  .ac-link {
+    font-size: 0.85rem !important;
+    padding: 10px 14px !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Modern Contact & Footer Styling
+--------------------------------------------------------------*/
+.footer {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(3, 5, 8, 0) 0%, rgba(3, 5, 8, 0.95) 100%) !important;
+  padding: 80px 0 30px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer .subtitle {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.contact-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px 20px;
+  height: 100%;
+  transition: all 0.35s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15);
+}
+
+.contact-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px auto;
+  border-radius: 14px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.contact-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.contact-card p, 
+.contact-card a {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.contact-card a:hover {
+  color: var(--accent-color);
+}
+
+.footer-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-social-links a:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+.footer-links a, 
+.footer-links .credits a {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+}
